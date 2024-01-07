@@ -1,0 +1,35 @@
+package com.notes.notepadapp
+
+import android.content.Intent
+import androidx.appcompat.app.AppCompatActivity
+import android.os.Bundle
+import android.widget.Toast
+import com.notes.notepadapp.data.model.NoteModel
+import com.notes.notepadapp.databinding.ActivityAddtodoBinding
+import com.notes.notepadapp.databinding.ActivityNoteaddBinding
+
+class AddtodoActivity : AppCompatActivity() {
+    private var _binding: ActivityAddtodoBinding? = null
+    private val binding get() = _binding!!
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        _binding = ActivityAddtodoBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+        binding.imageViewAdd.setOnClickListener {
+            if (binding.editTextTextName.text.isNotBlank()) {
+                (application as AppNotepad).arrayOfToDos.add(
+                    NoteModel(
+                        binding.editTextTextName.text.toString(),
+                        "",
+                        false
+                    )
+                )
+                val myIntent = Intent(this, CheckActivity::class.java)
+                startActivity(myIntent)
+                finish()
+            } else {
+                Toast.makeText(applicationContext, "Enter all text", Toast.LENGTH_SHORT).show()
+            }
+        }
+    }
+}

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <View
+        android:id="@+id/cardViews"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_margin="10dp"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/drawables"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textViewNameForCheck"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="30dp"
+        android:text="TextView"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="@+id/cardViews"
+        app:layout_constraintStart_toStartOf="@+id/cardViews"
+        app:layout_constraintTop_toTopOf="@+id/cardViews" />
+
+    <CheckBox
+        android:id="@+id/checkBox"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginHorizontal="30dp"
+        android:button="@null"
+        android:background="?android:attr/listChoiceIndicatorMultiple"
+        app:layout_constraintBottom_toBottomOf="@+id/cardViews"
+        app:layout_constraintEnd_toEndOf="@+id/cardViews"
+        app:layout_constraintTop_toTopOf="@+id/cardViews" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
